@@ -1,0 +1,14 @@
+{
+  "name": "project-2",
+  "version": "1.0.0",
+  "description": "RESTFUL API that takes two parameters in a GET call and produces their product",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Madhankumar Anandan",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}

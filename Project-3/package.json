@@ -1,0 +1,14 @@
+{
+  "name": "project-3",
+  "version": "1.0.0",
+  "description": "RESTFUL  API that accepts a String as an input name and returns the first non-repeating character in the String",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Madhankumar Anandan",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}
