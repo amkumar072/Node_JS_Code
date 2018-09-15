@@ -10,7 +10,7 @@ var port = 3001;
  */
 http.createServer(function (req, res) {
 
-    var filePath = __dirname + '/madhan1.txt'
+    var filePath = __dirname + '/madhan.txt'
 
     fs.readFile(filePath, { encoding: 'utf-8' }, function (err, data) {
         if (!err) {
