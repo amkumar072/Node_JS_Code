@@ -20,7 +20,7 @@ var product = [{
 
 /**
  * Takes to paramter id and name in get reqeust
- * example:  http://localhost:3002/1/Apple
+ * example:  http://localhost:3002/product/1/Apple
  */
 app.get("/product/:id/:name", (req, res) => {
     var _id = req.params.id;

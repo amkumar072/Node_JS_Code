@@ -4,11 +4,16 @@
   "description": "RESTFUL  API that accepts a String as an input name and returns the first non-repeating character in the String",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha"
   },
   "author": "Madhankumar Anandan",
   "license": "ISC",
   "dependencies": {
     "express": "^4.16.3"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "mocha": "^5.2.0",
+    "request": "^2.88.0"
   }
 }
