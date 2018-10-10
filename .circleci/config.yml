@@ -1,0 +1,60 @@
+# Javascript Node CircleCI 2.0 configuration file
+#
+# Check https://circleci.com/docs/2.0/language-javascript/ for more details
+#
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/node:8.11.1
+    steps:
+      - setup_remote_docker:
+          docker_layer_caching: true
+      - checkout
+      # Download and cache dependencies
+      - restore_cache:
+          keys:
+          - v1-dependencies-{{ checksum "package.json" }}
+          # fallback to using the latest cache if no exact match is found
+          - v1-dependencies-
+      - run: npm install
+      - save_cache:
+          paths:
+            - node_modules
+          key: v1-dependencies-{{ checksum "package.json" }}
+      - run: npm test
+      - run: npm run eslint
+  image:
+    machine:
+      enabled: true
+      docker_layer_caching: true
+    steps:
+      - checkout
+      - run:
+          name: "Docker: image build"
+          command: |
+            set -ueo pipefail
+            sudo make image_build
+      - run:
+          name: "Docker: image push"
+          command: |
+            set -ueo pipefail
+            if [[ "${CIRCLE_BRANCH}" == "master" ]]; then
+              docker login -u $DOCKER_USER -p $DOCKER_PASS
+              sudo make image_push
+            else
+              echo -e "\033[93m  ---> image: not pushing branch ${CIRCLE_BRANCH} \033[0m"
+            fi
+
+workflows:
+  version: 2
+  build-and-push-image:
+    jobs:
+    - build
+    - image:
+        requires:
+          - build
+        # # the if condition in the run step ensures that we only push the image on master branch
+        # filters:
+        #   branches:
+        #     only: master

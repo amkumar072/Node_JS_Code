@@ -1,0 +1,7 @@
+version: "3.2"
+services:
+  reference-mock-server:
+    build: .
+    image: "openbankinguk/reference-mock-server:${COMPOSE_BUILD_TAG:-latest}"
+    ports:
+     - 8001:8001

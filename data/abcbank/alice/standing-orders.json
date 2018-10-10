@@ -1,0 +1,45 @@
+{
+  "Data": {
+    "StandingOrder": [
+      {
+        "AccountId": "22289",
+        "StandingOrderId": "22830",
+        "Frequency": "EvryDay",
+        "Reference": "BEntity3",
+        "FirstPaymentDateTime": "2018-10-03T22:35:05.531Z",
+        "FirstPaymentAmount": {
+          "Amount": "200.50",
+          "Currency": "GBP"
+        },
+        "NextPaymentDateTime": "2018-10-03T22:35:05.531Z",
+        "NextPaymentAmount": {
+          "Amount": "42.50",
+          "Currency": "GBP"
+        },
+        "FinalPaymentDateTime": "2018-10-03T22:35:05.531Z",
+        "FinalPaymentAmount": {
+          "Amount": "182.50",
+          "Currency": "GBP"
+        },
+        "Servicer": {
+          "SchemeName": "BICFI",
+          "Identification": "BankY"
+        },
+        "CreditorAccount": {
+          "SchemeName": "IBAN",
+          "Identification": "BankY",
+          "Name": "RBS Mortgage",
+          "SecondaryIdentification": "Beneg"
+        }
+      }
+    ]
+  },
+  "Links": {
+    "Self": "/standing-orders"
+  },
+  "Meta": {
+    "TotalPages": 1,
+    "FirstAvailableDateTime": "2018-10-03T22:35:05.531Z",
+    "LastAvailableDateTime": "2018-10-03T22:35:05.531Z"
+  }
+}
